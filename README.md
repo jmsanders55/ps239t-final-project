@@ -23,10 +23,10 @@ I then used R for data cleaning and visualization of the dataset, specifically u
 3. Slides.XXX: Your lightning talk slides, in whatever format you prefer.
 
 #### Code/
-1. 1.Final Project_Webscraping.py: Collects data from ESPN Top 100 Recruiting Data using Beautiful Soup and adds them to individual CSV files for each class.
-2. 1.Final Project_Clean Bar Graph Data.Rmd: Loads and reformats Top 100 Dataset for bar graph visualization.
-3. 2.Final Project_Cluster Bar Graph Script.Rmd: Conducts descriptive analysis of the data and produces a cluster bar graph for Top 100 Recruits by High School Type found in the Results directory.
-4. 3.Final Project_Data Analysis and Tables.Rmd: Loads Top 100 Dataset to produce high school and college level tables found in Results directory.
+1. 01_Final Project_Webscraping.py: Collects data from ESPN Top 100 Recruiting Data using Beautiful Soup and adds them to individual CSV files for each class.
+2. 02_Final Project_Clean Bar Graph Data.Rmd: Loads and reformats Top 100 Dataset for bar graph visualization.
+3. 03_Final Project_Cluster Bar Graph Script.Rmd: Conducts descriptive analysis of the data and produces a cluster bar graph for Top 100 Recruits by High School Type found in the Results directory.
+4. 04_Final Project_Data Analysis and Tables.Rmd: Loads Top 100 Dataset to produce high school and college level tables found in Results directory.
 
 #### Data/
 
