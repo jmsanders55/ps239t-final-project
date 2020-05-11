@@ -1,4 +1,4 @@
-# ps239t-final-project
+# PS 239T Final Project
 Jasmine Sanders: Final Project for PS 239T
 
 ## Short Description
