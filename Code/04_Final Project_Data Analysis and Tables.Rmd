@@ -1,0 +1,87 @@
+---
+title: "Final Project_Data Analysis and Tables"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    df_print: paged
+    theme: flatly
+    highlight: pygments
+---
+# 0 Summary of File
+The purpose of this file is to perform data analysis and create data tables for the dataset of the Top 100 Recruits from 2010-2020, specifically high school data. 
+
+#1 Setup environment
+```{r}
+# remove all objects
+rm(list=ls())
+
+# check working directory
+getwd()
+
+# Unload all packages 
+library(pacman)
+pacman::p_unload(all)
+
+# Add packages 
+pacman::p_load(
+  tidyverse, #ggplot, dplyr, readr, etc.
+  ggthemes, #extra themes
+  viridis, #great colors
+  data.table, #fread() 
+  foreign, #load data types including stata .dta files 
+  magrittr, #%<>% operator
+  skimr, #for summerising
+  stargazer, #pretty tables 
+  xtable, #pretty tables 
+  knitr, #pretty tables (kable)
+  kable,
+  kableExtra #KableExtra
+  
+)
+```
+
+#2 Load Data 
+```{r}
+bar_graph_data <- read.csv("/Users/jasminesanders/Desktop/Berkeley/Spring 2020/239T Intro to Computational Tools/Final_Project/top_100_2010-2020_csv.csv")
+```
+
+#3 Kable 
+
+```{r}
+install.packages("kableExtra")
+
+# Frequency of high schools by high school type. This table will display top producing high schools of NCAA recruits. 
+HS <- bar_graph_data %>% 
+  group_by(High.School, HS.Type) %>%
+  summarise(total=n()) %>%
+  arrange(desc(total)) %>%
+  ungroup %>%
+  slice(1:10) 
+```
+
+```{r}
+#Clean table
+kable(HS, format = "html", booktabs = T, caption = "Top producing high schools of NCAA recruits") %>%
+  kable_styling(latex_options = c("striped", "hold_position"))
+
+```
+
+```{r}
+# Frequency of colleges. There's also the question of where this talent is going; this table will display top signed/committed colleges of NCAA recruits.
+Coll <-bar_graph_data %>% 
+  group_by(College, Status) %>% 
+  summarise(total=n()) %>%
+  arrange(desc(total)) %>%
+  ungroup %>%
+  slice(1:10) %>%
+print(Coll)
+```
+
+```{r}
+#Clean table
+kable(Coll, format = "html", booktabs = T, caption = "Top signed colleges of NCAA recruits") %>%
+  kable_styling(latex_options = c("striped", "hold_position"))
+```
+
