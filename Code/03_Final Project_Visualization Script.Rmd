@@ -1,0 +1,102 @@
+---
+title: "Final Project_Cluster Bar Graph Script"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    df_print: paged
+    theme: flatly
+    highlight: pygments
+---
+# 0 Summary of File
+The purpose of this file is to graph trends over time in HS type of the Top 100 NCAA Recruits from 2010-2020. 
+
+# 1 Setup environment
+
+```{r}
+# remove all objects
+rm(list=ls())
+
+# check working directory
+getwd()
+
+# Unload all packages 
+library(pacman)
+pacman::p_unload(all)
+
+# Add packages 
+pacman::p_load(
+  tidyverse, #ggplot, dplyr, readr, etc.
+  ggplot2, #for clustered and stacked bars
+  ggthemes, #extra themes
+  viridis, #great colors
+  data.table, #fread() 
+  foreign, #load data types including stata .dta files 
+  magrittr, #%<>% operator
+  skimr, #for summerising
+  stargazer, #pretty tables 
+  xtable, #pretty tables 
+  knitr #pretty tables (kable)
+)
+```
+#2 Load Data 
+```{r}
+bar_graph <- read.csv("/Users/jasminesanders/Desktop/Berkeley/Spring 2020/239T Intro to Computational Tools/Final_Project/reformatted data.csv")
+```
+
+#3 Visualization Setup
+```{r}
+# Change default plot dimensions
+knitr::opts_chunk$set(fig.width=10, fig.height=6)
+
+# Load themes
+source("/Users/jasminesanders/Documents/GitHub/PS239T_Spring2020/09_r-analysis-visualization/06_setup/visualisation.R")
+```
+
+#4 Check data
+```{r}
+bar_graph
+```
+
+#4 Plot Cluster Bar Graph of Top 100 Recruits by HS Type from 2010-2020
+```{r}
+ggplot(data=bar_graph, aes(x=year_new, y=total_new))+
+  geom_bar(aes(fill=HS.Type), position = "dodge", stat = "identity")+
+  xlab("Year")+
+  ylab("HS Type Count")+
+  labs(fill = "High School Type")+
+  ggtitle("Top 100 NCAA Recruits by High School Type: Class of 2010-2020")+
+  scale_x_continuous(breaks=seq(2010,2020,1))+
+  theme_stata()
+```
+
+
+#5 Save/Export Bar Graph
+```{r}
+ggsave(filename="/Users/jasminesanders/Desktop/Berkeley/Spring 2020/239T Intro to Computational Tools/Final_Project/Final_Project_bar_graph.png", 
+       plot=last_plot() #default
+       )
+```
+
+#6 Line Plot Graphs
+```{r}
+ggplot(data=bar_graph, aes(x=year_new, y=total_new, group=HS.Type), stat = "identity") +
+  geom_line(aes(color=HS.Type), size=1)+
+  geom_point(aes(color=HS.Type))+
+  xlab("Year")+
+  ylab("HS Type Count")+
+  scale_colour_hue(name="High School Type")+
+  ggtitle("High School Type Trends of Top 100 NCAA Recruits: Class of 2010-2020")+
+  scale_x_continuous(breaks=seq(2010,2020,1))+
+  theme_stata()
+
+```
+
+#5 Save/Export Bar Graph
+```{r}
+ggsave(filename="/Users/jasminesanders/Desktop/Berkeley/Spring 2020/239T Intro to Computational Tools/Final_Project/Final_Project_line_graph.png", 
+       plot=last_plot() #default
+       )
+```
+
