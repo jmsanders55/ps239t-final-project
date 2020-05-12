@@ -18,9 +18,9 @@ I then used R for data cleaning and visualization of the dataset, specifically u
 
 #### Description/
 
-1. Narrative.Rmd: Provides a 3-5 page narrative of the project, main challenges, solutions, and results.
-2. Narrative.pdf: A knitted pdf of 00_Narrative.Rmd. 
-3. Slides.XXX: Your lightning talk slides, in whatever format you prefer.
+1. Narrative.Rmd: Provides a brief narrative of the project, main challenges & solutions and future directions.
+2. Narrative.pdf: A knitted pdf of Narrative.Rmd. 
+3. Slides_Final Project Presentation.pdf: Presentation slides from 05/06/2020
 
 #### Code/
 1. 01_Final Project_Webscraping.py: Collects data from ESPN Top 100 Recruiting Data using Beautiful Soup and adds them to individual CSV files for each class.
@@ -39,7 +39,3 @@ I then used R for data cleaning and visualization of the dataset, specifically u
 2. 02_Final_Project_line_graph.png: Grouped Line Plot displays trends in Top 100 NCAA Recruits' high school type from 2010 to 2020.
 3. 03_Top producing HS.png: Table displaying the Top 10 producing high schools of NCAA Recruits from 2010-2020
 4. 04_Top colleges.png: Table displaying the Top 10 colleges NCAA Recruits commit to 
-
-## More Information
-
-While I set up the Python code to loop year as a string in the webpage (from 2010-2020), I was unable to successfully scrape multiple pages into a single data frame. I attempted several combinations of code to loop the scraped data, including the sleep() function from the time module and the randint() function from the random module, unfortunately neither worked. For the sake of this project, I re-ran the original Python script simply changing the years to scrape data for each class and write to an individual csv. Then I combined each year's csv to a single document with years from 2010-2020. Moving forward, I will revisit this to ascertain how to revise the Python code to scrape from multiple websites in a single data frame. 
