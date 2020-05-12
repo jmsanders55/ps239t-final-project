@@ -24,8 +24,8 @@ I then used R for data cleaning and visualization of the dataset, specifically u
 
 #### Code/
 1. 01_Final Project_Webscraping.py: Collects data from ESPN Top 100 Recruiting Data using Beautiful Soup and adds them to individual CSV files for each class.
-2. 02_Final Project_Clean Bar Graph Data.Rmd: Loads and reformats Top 100 Dataset for bar graph visualization.
-3. 03_Final Project_Cluster Bar Graph Script.Rmd: Conducts descriptive analysis of the data and produces a cluster bar graph for Top 100 Recruits by High School Type found in the Results directory.
+2. 02_Final Project_Clean Visualization Data.Rmd: Loads and reformats Top 100 Dataset for bar graph visualization.
+3. 03_Final Project_Visualization Script.Rmd: Conducts descriptive analysis of the data and produces a cluster bar graph for Top 100 Recruits by High School Type found in the Results directory.
 4. 04_Final Project_Data Analysis and Tables.Rmd: Loads Top 100 Dataset to produce high school and college level tables found in Results directory.
 
 #### Data/
@@ -34,6 +34,8 @@ I then used R for data cleaning and visualization of the dataset, specifically u
 2. reformatted data.csv: Contains selected data from top_100_2010-2020_csv.csv for data visualization and bar charts. 
 
 #### Results/
+
+1. 
 
 
 ## More Information
