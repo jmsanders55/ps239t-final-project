@@ -35,9 +35,11 @@ I then used R for data cleaning and visualization of the dataset, specifically u
 
 #### Results/
 
-1. 
-
+1. 01_Final_Project_bar_graph.png: Clustered Bar Graph of Top 100 NCAA Recruits by High School Type from 2010-2020.
+2. 02_Final_Project_line_graph.png: Grouped Line Plot displays trends in Top 100 NCAA Recruits' high school type from 2010 to 2020.
+3. 03_Top producing HS.png: Table displaying the Top 10 producing high schools of NCAA Recruits from 2010-2020
+4. 04_Top colleges.png: Table displaying the Top 10 colleges NCAA Recruits commit to 
 
 ## More Information
 
-Include any other details you think your user might need to reproduce your results. You may also include other information such as your contact information, credits, etc.
+While I set up the Python code to loop year as a string in the webpage (from 2010-2020), I was unable to successfully scrape multiple pages into a single data frame. I attempted several combinations of code to loop the scraped data, including the sleep() function from the time module and the randint() function from the random module, unfortunately neither worked. For the sake of this project, I re-ran the original Python script simply changing the years to scrape data for each class and write to an individual csv. Then I combined each year's csv to a single document with years from 2010-2020. Moving forward, I will revisit this to ascertain how to revise the Python code to scrape from multiple websites in a single data frame. 
